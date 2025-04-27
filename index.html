@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aewans White Meat offers fresh, healthy white meat products delivered to your door.">
+  <meta name="keywords" content="white meat, fresh chicken, tilapia fish, rabbit meat, turkey, online ordering, home delivery">
+  <title>Aewans White Meat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Aewans White Meat</h1>
+    <p>Fresh, Healthy, Delivered to You</p>
+    <a href="https://api.whatsapp.com/send?phone=254700768025&text=Hi%20Aewans%20White%20Meat%2C%20I%20would%20like%20to%20place%20an%20order." class="button" aria-label="Order Now on WhatsApp">Order Now on WhatsApp</a>
+    <div class="social-links">
+      <a href="https://instagram.com/aewan2025" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">Follow us on Instagram</a>
+    </div>
+  </header>
+
+  <!-- Navigation Section -->
+  <nav>
+    <ul>
+      <li><a href="#home" class="active" aria-label="Navigate to Home">Home</a></li>
+      <li><a href="#about" aria-label="Navigate to About Us">About Us</a></li>
+      <li><a href="#products" aria-label="Navigate to Products">Products</a></li>
+      <li><a href="#services" aria-label="Navigate to Services">Services</a></li>
+      <li><a href="#contact" aria-label="Navigate to Contact Us">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Home Section -->
+    <section id="home">
+      <h2>Welcome to Aewans White Meat!</h2>
+      <p>Your trusted source for the freshest white meat products delivered right to your door.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Us</h2>
+      <p>At Aewans White Meat, we are committed to providing high-quality, fresh, and healthy white meat. We serve individuals, restaurants, and events with both online and onsite sales.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+      <h2>Our Products</h2>
+      <ul>
+        <li>Fresh Chicken</li>
+        <li>Tilapia Fish</li>
+        <li>Rabbit Meat</li>
+        <li>Turkey</li>
+      </ul>
+      <p>More products coming soon!</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Online ordering and home delivery</li>
+        <li>Onsite purchases at our local shop</li>
+        <li>Bulk supply for events and businesses</li>
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Phone: +254700768025</p>
+      <p>Email: andrewewat@gmail.com</p>
+    </section>
+  </main>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" aria-label="Scroll to Top">&#8679;</button>
+
+  <!-- Footer Section -->
+  <footer>
+    &copy; 2025 Aewans White Meat. All rights reserved.
+  </footer>
+
+  <!-- JavaScript Section -->
+  <script>
+    // Scroll active link highlighting
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+
+      // Scroll to Top Button functionality
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+      if (window.scrollY > 300) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    });
+
+    document.getElementById('scrollTopBtn').addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
